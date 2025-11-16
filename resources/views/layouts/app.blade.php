@@ -1,3 +1,5 @@
+@stack('scripts')
+
 <!DOCTYPE html>
 <html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="themedefault"
     data-assets-path="../assets/" data-template="vertical-menu-template-free">
