@@ -4,13 +4,14 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 // User - Hanya bisa diakses setelah login
 Route::middleware(['auth'])->group(function () {
     Route::get('/', function () {
-        return view('home');
-    })->name('home');
+        return view('dashboard');
+    })->name('dashboard');
 });
 
 Route::middleware('auth')->group(function () {
