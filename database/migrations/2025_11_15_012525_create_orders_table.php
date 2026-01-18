@@ -16,9 +16,9 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->date('tanggal');
             $table->decimal('total', 12, 2);
+            $table->string('bukti_pembayaran')->nullable();
+            $table->enum('status_pembayaran', ['pending', 'lunas', 'gagal', 'diproses'])->default('pending');
             $table->timestamps();
-            $table->string('bukti_pembayaran');
-            $table->enum('status_pembayaran', ['pending', 'lunas', 'gagal', 'diproses']);
         });
     }
 

@@ -8,7 +8,7 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="">Produk</a></li>
-                @auth
+                @auth 
                     <li class="nav-item"><a class="nav-link" href="{{ route('cart.index') }}">Menu
                             Checkout</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('orders.history') }}">Daftar
