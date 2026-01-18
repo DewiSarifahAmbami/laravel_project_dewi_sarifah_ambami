@@ -1,62 +1,28 @@
-<nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
-    id="layout-navbar">
-    <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-        <ul class="navbar-nav flex-row align-items-center ms-auto">
-            <!-- User -->
-            <li class="nav-item dropdown">
-                <a class="nav-link p-0" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <div class="avatar avatar-online">
-                        <img src="{{ asset('assets/img/avatars/1.png') }}" alt="User" class="w-px-40 h-auto rounded-circle" style="cursor: pointer;">
-                    </div>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end">
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <div class="d-flex">
-                                <div class="flex-shrink-0 me-3">
-                                    <div class="avatar avatar-online">
-                                        <img src="{{ asset('assets/img/avatars/1.png') }}" alt
-                                            class="w-px-40 h-auto rounded-circle" />
-                                    </div>
-                                </div>
-                                <div class="flex-grow-1">
-                                    <span class="fw-semibold d-block">John Doe</span>
-                                    <small class="text-muted">Admin</small>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <div class="dropdown-divider"></div>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <i class="bx bx-user me-2"></i>
-                            <span class="align-middle">My Profile</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <i class="bx bx-cog me-2"></i>
-                            <span class="align-middle">Settings</span>
-                        </a>
-                    </li>
-                    <li>
-                        <div class="dropdown-divider"></div>
-                    </li>
-                    <li>
-                        <form method="POST" action="{{ route('logout') }}" class="d-inline w-100">
-                            @csrf
-                            <button type="submit" class="dropdown-item w-100 text-start">
-                                <i class="bx bx-power-off me-2"></i>
-                                <span class="align-middle">Log Out</span>
-                            </button>
-                        </form>
-                    </li>
-                </ul>
-            </li>
-            <!--/ User -->
-        </ul>
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container">
+        <a class="navbar-brand fw-bold fs-2 text-primary" href="#">TokoKu</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bstarget="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="">Produk</a></li>
+                @auth
+                    <li class="nav-item"><a class="nav-link" href="{{route('cart.index')}}">Menu Checkout</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{route('orders.history')}}">Daftar Pesanan</a></li>
+                @endauth
+            </ul>
+            @guest
+                <a href="{{ route('login') }}" class="btn btn-primary ms-lg-3">Login</a>
+            @endguest
+            @auth
+            <form method="POST" action="{{ route('logout') }}" class="d-inline">
+                @csrf
+                <button type="submit" class="btn btn-danger ms-lg-3">Logout</button>
+            </form>
+            @endauth
+        </div>
     </div>
 </nav>
 <!-- Include Bootstrap JS -->
