@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 //         return view('dashboard');
 //     })->name('dashboard');
 // });
-
+ 
 // Route::get('/', function () {
 //     $products = Product::latest()->take(8)->get();
 //     return view('user.home', compact('products'));

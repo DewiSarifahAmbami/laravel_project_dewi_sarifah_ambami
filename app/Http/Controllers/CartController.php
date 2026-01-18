@@ -6,7 +6,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
-{
+{ 
     /**
      * Menampilkan isi keranjang
      */

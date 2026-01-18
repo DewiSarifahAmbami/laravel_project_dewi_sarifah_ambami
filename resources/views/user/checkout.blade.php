@@ -7,7 +7,7 @@
             <div class="alert alert-success">{{ session('success') }}</div>
         @endif
         @if ($cart && count($cart) > 0)
-            <div class="row">
+            <div class="row"> 
                 <!-- Ringkasan Pesanan -->
                 <div class="col-md-7">
                     <h4 class="fw-bold mb-3">Ringkasan Pesanan</h4>

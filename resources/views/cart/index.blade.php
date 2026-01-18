@@ -11,7 +11,7 @@
                 <thead>
                     0, ',', '.') }}</td>
                     </tr>
-                    </tfoot>
+                    </tfoot> 
             </table>
             <!-- Bagian Total + Tombol Checkout -->
             <div class="d-flex justify-content-between align-items-center mt-4">
